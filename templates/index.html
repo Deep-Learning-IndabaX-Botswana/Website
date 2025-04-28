@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>{{ event.title }}</h1>
+        <h2>{{ event.tagline }}</h2>
+        <p class="event-date">{{ event.date_string }} | {{ event.venue }}</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('register') }}" class="cta-button primary">Register Now</a>
+            <a href="#" class="cta-button secondary">Submit a Talk</a>
+        </div>
+    </div>
+</section>
+
+<section class="countdown-section">
+    <div class="container">
+        <h2>Event Starts In</h2>
+        <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">{{ countdown.days }}</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">{{ countdown.hours }}</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">{{ countdown.minutes }}</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">{{ countdown.seconds }}</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="intro-section">
+    <div class="container">
+        <div class="two-column">
+            <div class="column">
+                <h2>Welcome to IndabaX Botswana</h2>
+                <p>{{ event.description }}</p>
+                <p>Join researchers, industry professionals, students, and AI enthusiasts for three days of knowledge sharing, networking, and collaboration.</p>
+                <a href="{{ url_for('about') }}" class="learn-more">Learn More</a>
+            </div>
+            <div class="column">
+                <div class="event-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <h3>300+ Attendees</h3>
+                        <p>Connect with AI enthusiasts from across Botswana and beyond</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>20+ Speakers</h3>
+                        <p>Learn from leading experts in AI and machine learning</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>10 Workshops</h3>
+                        <p>Hands-on sessions for all skill levels</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>AI Expo</h3>
+                        <p>Showcasing local innovations and applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-speakers">
+    <div class="container">
+        <h2>Featured Speakers</h2>
+        <p class="section-intro">Meet some of our distinguished speakers who will be sharing their insights and expertise.</p>
+        <div class="speakers-grid">
+            <div class="speaker-card">
+                <div class="speaker-image placeholder"></div>
+                <h3>Prof. Bakang Kgopolo</h3>
+                <p class="speaker-title">AI Ethics Researcher, University of Cape Town</p>
+                <p>Keynote: "Responsible AI Development in African Contexts"</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-image placeholder"></div>
+                <h3>Dr. Bakang Kgopolo</h3>
+                <p class="speaker-title">Lead Data Scientist, Botswana Innovation Hub</p>
+                <p>Talk: "Machine Learning Applications in Agriculture"</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-image placeholder"></div>
+                <h3>Ms. Bakang Kgopolo</h3>
+                <p class="speaker-title">Tech Entrepreneur & AI Advocate</p>
+                <p>Panel: "Building AI Startups in Botswana"</p>
+            </div>
+            <div class="speaker-card">
+                <div class="speaker-image placeholder"></div>
+                <h3>Ms. Bakang Kgopolo</h3>
+                <p class="speaker-title">Tech Entrepreneur & AI Advocate</p>
+                <p>Panel: "Building AI Startups in Botswana"</p>
+            </div>
+        </div>
+        <div class="center-button">
+            <a href="{{ url_for('programme_page') }}" class="button">View Full Programme</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Countdown Timer
+    const eventDate = new Date('{{ event_date.strftime("%Y-%m-%d %H:%M:%S") }}');
+    
+    function updateCountdown() {
+        const now = new Date();
+        const diff = eventDate - now;
+        
+        if (diff <= 0) {
+            document.getElementById('days').textContent = '0';
+            document.getElementById('hours').textContent = '0';
+            document.getElementById('minutes').textContent = '0';
+            document.getElementById('seconds').textContent = '0';
+            return;
+        }
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+    }
+    
+    setInterval(updateCountdown, 1000);
+</script>
+{% endblock %}

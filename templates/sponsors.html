@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block title %}Sponsors & Partners - {{ event.title }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Sponsors & Partners</h1>
+    </div>
+</section>
+
+<section class="sponsors-intro">
+    <div class="container">
+        <h2>Our Valued Supporters</h2>
+        <p>IndabaX Botswana is made possible through the generous support of our sponsors and partners. Their commitment to advancing AI education and research in Botswana helps us create a meaningful and impactful event.</p>
+    </div>
+</section>
+
+<section class="sponsors-section">
+    <div class="container">
+        <h2>Platinum Sponsors</h2>
+        <div class="sponsors-grid platinum">
+            {% for sponsor in sponsors %}
+                {% if sponsor.level == "Platinum" %}
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="{{ url_for('static', filename='images/sponsors/' + sponsor.logo) }}" alt="{{ sponsor.name }} logo">
+                    </div>
+                    <h3>{{ sponsor.name }}</h3>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <h2>Gold Sponsors</h2>
+        <div class="sponsors-grid gold">
+            {% for sponsor in sponsors %}
+                {% if sponsor.level == "Gold" %}
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="{{ url_for('static', filename='images/sponsors/' + sponsor.logo) }}" alt="{{ sponsor.name }} logo">
+                    </div>
+                    <h3>{{ sponsor.name }}</h3>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <h2>Silver Sponsors</h2>
+        <div class="sponsors-grid silver">
+            {% for sponsor in sponsors %}
+                {% if sponsor.level == "Silver" %}
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="{{ url_for('static', filename='images/sponsors/' + sponsor.logo) }}" alt="{{ sponsor.name }} logo">
+                    </div>
+                    <h3>{{ sponsor.name }}</h3>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="become-sponsor">
+    <div class="container">
+        <div class="sponsor-cta">
+            <div class="cta-content">
+                <h2>Become a Sponsor</h2>
+                <p>Join our mission to advance AI education and innovation in Botswana. As a sponsor, you'll gain visibility among AI researchers, practitioners, and enthusiasts while supporting the growth of Botswana's tech ecosystem.</p>
+                <h3>Sponsorship Benefits</h3>
+                <ul>
+                    <li>Brand visibility to a targeted audience of AI professionals and enthusiasts</li>
+                    <li>Networking opportunities with researchers, industry leaders, and students</li>
+                    <li>Demonstration of your organization's commitment to AI advancement in Botswana</li>
+                    <li>Access to talent recruitment opportunities</li>
+                    <li>Customized sponsorship packages to meet your organization's goals</li>
+                </ul>
+            </div>
+            <div class="cta-action">
+                <a href="#" class="button">Download Sponsorship Prospectus</a>
+                <a href="mailto:sponsors@indabaxbotswana.org" class="button secondary">Contact Sponsorship Team</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section">
+    <div class="container">
+        <h2>Academic Partners</h2>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-logo placeholder"></div>
+                <h3>University of Botswana</h3>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo placeholder"></div>
+                <h3>Botswana International University of Science and Technology</h3>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo placeholder"></div>
+                <h3>Botswana Accountancy College</h3>
+            </div>
+        </div>
+        
+        <h2>Community Partners</h2>
+        <div class="partners-grid">
+            <div class="partner-card">
+                <div class="partner-logo placeholder"></div>
+                <h3>Botswana AI Society</h3>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo placeholder"></div>
+                <h3>Women in Tech Botswana</h3>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo placeholder"></div>
+                <h3>Botswana Innovation Hub</h3>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
