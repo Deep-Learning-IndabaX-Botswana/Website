@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block title %}Register - {{ event.title }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Register for IndabaX Botswana</h1>
+    </div>
+</section>
+
+<section class="registration-section">
+    <div class="container">
+        <div class="two-column">
+            <div class="column">
+                <h2>Registration Information</h2>
+                <p>Join us for three days of learning, networking, and collaboration at IndabaX Botswana 2025. Registration includes:</p>
+                <ul class="registration-benefits">
+                    <li>Access to all conference sessions and workshops</li>
+                    <li>Conference materials and resources</li>
+                    <li>Lunch and refreshments during the event</li>
+                    <li>Certificate of participation</li>
+                    <li>Networking opportunities with speakers and attendees</li>
+                </ul>
+                
+                <div class="registration-types">
+                    <h3>Registration Types</h3>
+                    <div class="registration-type">
+                        <h4>Student</h4>
+                        <p class="price">P300</p>
+                        <p>For full-time students with valid student ID</p>
+                    </div>
+                    <div class="registration-type">
+                        <h4>Academic</h4>
+                        <p class="price">P600</p>
+                        <p>For faculty and researchers from academic institutions</p>
+                    </div>
+                    <div class="registration-type">
+                        <h4>Industry</h4>
+                        <p class="price">P1,200</p>
+                        <p>For professionals from industry and government</p>
+                    </div>
+                </div>
+                
+                <div class="important-dates">
+                    <h3>Important Dates</h3>
+                    <ul>
+                        <li>Early Bird Registration Deadline: March 31, 2025</li>
+                        <li>Regular Registration Deadline: May 31, 2025</li>
+                        <li>Late Registration: June 1-10, 2025 (additional fee applies)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="registration-form">
+                    <h2>Registration Form</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="affiliation">Affiliation/Organization *</label>
+                            <input type="text" id="affiliation" name="affiliation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registration-type">Registration Type *</label>
+                            <select id="registration-type" name="registration-type" required>
+                                <option value="">Select registration type</option>
+                                <option value="student">Student (P300)</option>
+                                <option value="academic">Academic (P600)</option>
+                                <option value="industry">Industry (P1,200)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="workshops">Workshops of Interest (select all that apply)</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="workshops" value="intro-ml"> Introduction to Machine Learning</label>
+                                <label><input type="checkbox" name="workshops" value="deep-learning"> Deep Learning Fundamentals</label>
+                                <label><input type="checkbox" name="workshops" value="nlp"> Natural Language Processing</label>
+                                <label><input type="checkbox" name="workshops" value="computer-vision"> Computer Vision</label>
+                                <label><input type="checkbox" name="workshops" value="ai-ethics"> AI Ethics and Responsible AI</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietary">Dietary Requirements</label>
+                            <textarea id="dietary" name="dietary" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" name="terms" required> I agree to the terms and conditions *</label>
+                        </div>
+                        <button type="submit" class="button">Submit Registration</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>Is there financial support available for students?</h3>
+                <p>Yes, we offer a limited number of scholarships for students. Please email <a href="mailto:scholarships@indabaxbotswana.org">scholarships@indabaxbotswana.org</a> for more information.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I register for specific days only?</h3>
+                <p>Yes, single-day registrations are available. Please contact us for pricing and availability.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is the cancellation policy?</h3>
+                <p>Cancellations made before May 15, 2025 will receive a full refund minus a P100 processing fee. No refunds will be issued after this date.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will the presentations be recorded?</h3>
+                <p>Yes, most sessions will be recorded and made available to registered participants after the event.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for registering! This is a demo form. In the actual implementation, this would submit to a server.');
+        // In a real implementation, you would submit the form data to your server here
+    });
+</script>
+{% endblock %}

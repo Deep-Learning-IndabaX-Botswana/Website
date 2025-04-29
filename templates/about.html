@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block title %}About - {{ event.title }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>About IndabaX Botswana</h1>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="two-column">
+            <div class="column">
+                <h2>What is IndabaX Botswana?</h2>
+                <p>IndabaX Botswana is a locally organized version of the Deep Learning Indaba, one of Africa's largest gatherings in artificial intelligence and machine learning.</p>
+                <p>Our event aims to strengthen Botswana's AI ecosystem by bringing together researchers, practitioners, policymakers, industry leaders, and students to share knowledge, build capacity, and foster collaboration.</p>
+                <p>Through workshops, technical sessions, keynotes, and networking opportunities, IndabaX Botswana creates a platform for advancing AI education and application in our local context.</p>
+            </div>
+            <div class="column">
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='images/about-conference.jpg') }}" alt="Previous IndabaX Botswana event">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mission-section">
+    <div class="container">
+        <h2>Our Mission</h2>
+        <div class="mission-cards">
+            <div class="mission-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Education</h3>
+                <p>Build AI capacity through accessible, high-quality training and knowledge sharing</p>
+            </div>
+            <div class="mission-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Collaboration</h3>
+                <p>Foster partnerships between academia, industry, and government to advance AI in Botswana</p>
+            </div>
+            <div class="mission-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>Inspire and support local AI solutions to address Botswana's unique challenges</p>
+            </div>
+            <div class="mission-card">
+                <i class="fas fa-globe-africa"></i>
+                <h3>Inclusion</h3>
+                <p>Ensure diverse participation and perspectives in AI development</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlights-section">
+    <div class="container">
+        <h2>Past Highlights</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023</div>
+                <div class="timeline-content">
+                    <h3>IndabaX Botswana 2023</h3>
+                    <p>Focused on "AI for Sustainable Development" with 250+ attendees and workshops on computer vision and NLP</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <h3>IndabaX Botswana 2022</h3>
+                    <p>Virtual edition with international speakers and a hackathon addressing healthcare challenges</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">
+                    <h3>IndabaX Botswana 2021</h3>
+                    <p>Inaugural event establishing the foundation for AI community building in Botswana</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <h2>Organizing Team</h2>
+        <p class="section-intro">Meet the dedicated individuals working to make IndabaX Botswana a success.</p>
+        <div class="team-grid">
+            {% for organizer in organizers %}
+            <div class="team-member">
+                <div class="member-image placeholder"></div>
+                <h3>{{ organizer.name }}</h3>
+                <p class="member-role">{{ organizer.role }}</p>
+                <p>{{ organizer.bio }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
