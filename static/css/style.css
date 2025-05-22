@@ -2,16 +2,21 @@
 :root {
     --primary-color: #1d1e1f;
     --secondary-color: #595e68;
-    --accent-color: #ff6b00;
+    --accent-color: #4b40a2;  /* Deep purple from the image */
+    --highlight-color: #ff6b00;
     --text-color: #333;
+    --text-color-1: #fbf4f4;
     --light-text: #fff;
-    --background-color: hwb(0 64% 34% / 0.443);
-    --card-bg: #fff;
+    --light-text-1: #201d1d;
+    --background-color: #252a2d;
+    --card-bg: #ffffff;
     --border-color: #e0e0e0;
     --success-color: #4caf50;
     --error-color: #f44336;
     --warning-color: #ff9800;
     --font-family: 'Roboto', sans-serif;
+    --indaba-dark-blue: #111;
+    --indaba-purple: #4b40a2;
 }
 
 * {
@@ -20,11 +25,98 @@
     box-sizing: border-box;
 }
 
+
+    /* About Page Specific Styles */
+    .about-section {
+        padding: 3rem 0;
+        color: var(--text-color-1);
+    }
+
+    .full-width-section {
+        color: var(--text-color);
+    }
+
+    .organizer-card {
+        color: var(--text-color);
+    }
+    
+    .mission-box {
+        background-color: rgba(214, 214, 218, 0.1);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+        border-left: 4px solid var(--indaba-purple);
+    }
+    
+    .programme-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .programme-list li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .organizer-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .organizer-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .organizer-card h3 {
+        color: var(--indaba-purple);
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-box {
+        background-color: var(--indaba-purple);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+    }
+    
+    .contact-box i {
+        margin-right: 10px;
+    }
+    
+    .full-width-section {
+        margin: 3rem 0;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+    
+    @media (max-width: 768px) {
+        .organizer-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+
+
+
 body {
     font-family: var(--font-family);
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--text-color-1);
     background-color: var(--background-color);
+    background-image: url('/static/images/matrix-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .container {
@@ -34,6 +126,15 @@ body {
     padding: 2rem 0;
 }
 
+.event-highlights{
+    color: var(--text-color-1);
+}
+
+.description-1{
+    color: var(--text-color-1);
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -41,11 +142,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2.5rem;
+    color: var(--light-text);
 }
 
 h2 {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--light-text);
 }
 
 h3 {
@@ -57,13 +159,13 @@ p {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--highlight-color);
 }
 
 ul, ol {
@@ -73,7 +175,7 @@ ul, ol {
 
 img {
     max-width: 100%;
-    height: 150%;
+    height: auto;
 }
 
 section {
@@ -83,7 +185,7 @@ section {
 .button, .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--light-text);
     border: none;
     border-radius: 4px;
@@ -94,18 +196,18 @@ section {
 }
 
 .button:hover, .cta-button:hover {
-    background-color: var(--secondary-color);
+    background-color: #3b3280;
     color: var(--light-text);
 }
 
 .button.secondary {
     background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .button.secondary:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--light-text);
 }
 
@@ -114,10 +216,46 @@ section {
     margin-top: 2rem;
 }
 
+
+.button_sponsorship, .cta-button_sponsorship {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button_sponsorship:hover, .cta-button_sponsorship:hover {
+    background-color: #3b3280;
+    color: var(--light-text);
+}
+
+.button_sponsorship.secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.button_sponsorship.secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+}
+
+.center-button_sponsorship {
+    text-align: center;
+    margin-top: 2rem;
+}
+
 .section-intro {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 2rem;
+    color: var(--light-text);
 }
 
 .two-column {
@@ -128,7 +266,7 @@ section {
 
 .column {
     flex: 1;
-    min-width: 300px;
+    min-width: 400px;
 }
 
 .placeholder {
@@ -144,8 +282,8 @@ section {
 
 /* Header & Navigation */
 header {
-    background-color: var(--light-text);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(17, 17, 17, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -159,7 +297,8 @@ nav {
 }
 
 .logo img {
-    height: 60px;
+    height: 90px;
+    width: 130px;
 }
 
 .nav-links {
@@ -168,34 +307,35 @@ nav {
 }
 
 .nav-links a {
-    color: var(--text-color);
+    color: var(--light-text);
     font-weight: 500;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--highlight-color);
 }
 
 .register-btn {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--light-text) !important;
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 1rem;
     border-radius: 4px;
 }
 
 .register-btn:hover {
-    background-color: var(--secondary-color);
+    background-color: #3b3280;
 }
 
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--light-text);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/matrix-bg.jpg');
     background-size: cover;
     background-position: center;
     color: var(--light-text);
@@ -245,7 +385,7 @@ nav {
 }
 
 .cta-button.primary:hover {
-    background-color: #e05d00;
+    background-color: #3b3280;
 }
 
 .cta-button.secondary:hover {
@@ -254,7 +394,7 @@ nav {
 
 /* Countdown Section */
 .countdown-section {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--light-text);
     text-align: center;
     padding: 2rem 0;
@@ -285,224 +425,252 @@ nav {
     margin-top: 0.5rem;
 }
 
-/* Intro Section */
-.intro-section {
-    background-color: var(--light-text);
+/* Info Box Styling (for call sections) */
+.info-box {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+    width: 100%; /* Reduced width */
+    max-width: 700px; /* Maximum width */
+    max-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
-.event-highlights {
+/* Info Box Styling (for call sections) */
+.info-box-1 {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+    width: 100%; /* Reduced width */
+    max-width: 1000px; /* Maximum width */
+    max-height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.info-box-header {
+    background-color: var(--indaba-purple);
+    color: var(--light-text);
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.info-box-content-1 {
+    background-image: url('/static/images/attendes.jpeg');
+    background-size: 100% 100%;
+    background-position: center;
+    min-height: 700px; /* Reduced height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.info-box-content-2 {
+    background-image: url('/static/images/speakers.jpeg');
+    background-size: 100% 100%;
+    background-position: center;
+    min-height: 700px; /* Reduced height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.info-box-content-3 {
+    background-image: url('/static/images/paticipate.jpeg');
+    background-size: 100% 100%;
+    background-position: center;
+    min-height: 700px; /* Reduced height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.application-details {
+    background-color: rgba(75, 64, 162, 0.8); /* Semi-transparent purple */
+    padding: 15px;
+    text-align: center;
+}
+
+.application-details p {
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.application-details .button {
+    background-color: var(--highlight-color); /* Orange button */
+    border: 2px solid var(--highlight-color);
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+.application-details .button:hover {
+    background-color: transparent;
+    color: var(--highlight-color);
+}
+
+
+
+.application-details .button_sponsorship {
+    background-color: var(--highlight-color); /* Orange button */
+    border: 2px solid var(--highlight-color);
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+.application-details .button_sponsorship:hover {
+    background-color: transparent;
+    color: var(--highlight-color);
+}
+/* PDF Viewer Styles */
+.pdf-viewer-container {
+    margin: 1px 0;
+    text-align: center;
+}
+
+.pdf-actions {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.file-size {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Font Awesome icon (if using) */
+.fas {
+    margin-right: 8px;
+}
+
+/* Featured Sections */
+.featured-section {
+    color: var(--light-text);
+}
+
+.featured-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Speaker/Registration Cards */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
+    margin: 2rem 0;
 }
 
-.highlight-item {
+.event-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.event-card-header {
+    background-color: var(--indaba-purple);
+    color: var(--light-text);
+    padding: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.event-card-content {
+    padding: 1.5rem;
+}
+
+/* Registration Section */
+.registration-section {
+    color: var(--light-text);
+}
+
+.registration-option {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.registration-option h3 {
+    background-color: var(--indaba-purple);
+    color: var(--light-text);
+    padding: 1rem;
+    margin: 0;
+}
+
+.registration-option-content {
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.registration-types {
+    margin-bottom: 2rem;
+}
+
+.registration-type {
     background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.highlight-item i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
-.highlight-item h3 {
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
-.learn-more {
-    display: inline-block;
-    margin-top: 1rem;
-    font-weight: 500;
-}
-
-/* Featured Speakers */
-.featured-speakers {
-    background-color: var(--background-color);
-}
-
-.speakers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.speaker-card {
+.important-dates {
     background-color: var(--card-bg);
+    padding: 1.5rem;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
 }
 
-.speaker-image {
-    height: 200px;
-    background-color: #e0e0e0;
-}
-
-.speaker-card h3, .speaker-card p {
-    padding: 0 1rem;
-}
-
-.speaker-card h3 {
-    margin-top: 1rem;
-}
-
-.speaker-title {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.speaker-card p:last-child {
-    padding-bottom: 1rem;
-}
-
-/* Page Header */
-.page-header {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.page-header h1 {
-    margin-bottom: 0;
-}
-
-/* About Page */
-.about-section {
-    background-color: var(--light-text);
-}
-
-.image-container {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.mission-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.mission-card {
+.registration-benefits {
     background-color: var(--card-bg);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.mission-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.timeline {
-    margin: 2rem 0;
-    position: relative;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 120px;
-    width: 4px;
-    background-color: var(--primary-color);
-}
-
-.timeline-item {
-    display: flex;
     margin-bottom: 2rem;
-    position: relative;
+    color: var(--text-color);
 }
 
-.timeline-date {
-    width: 100px;
-    padding-right: 20px;
-    text-align: right;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-.timeline-content {
-    flex: 1;
-    padding-left: 40px;
-}
-
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    left: 116px;
-    top: 0;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.team-member {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.member-image {
-    height: 200px;
-}
-
-.team-member h3, .team-member p {
-    padding: 0 1rem;
-}
-
-.team-member h3 {
-    margin-top: 1rem;
-}
-
-.member-role {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.team-member p:last-child {
-    padding-bottom: 1rem;
-}
-
-/* Programme Page */
 .event-structure {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    color: var(--text-color-1);
 }
 
-.structure-item {
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
 
-.structure-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+/* Schedule Section */
+.schedule-section {
+    color: var(--light-text);
 }
 
 .schedule-note {
@@ -525,9 +693,9 @@ nav {
 
 .tab-button {
     padding: 0.75rem 1.5rem;
-    background-color: var(--card-bg);
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--accent-color);
+    color: var(--light-text);
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
@@ -535,7 +703,7 @@ nav {
 }
 
 .tab-button.active, .tab-button:hover {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--light-text);
 }
 
@@ -550,26 +718,40 @@ nav {
 .day-schedule {
     max-width: 800px;
     margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.daily-theme {
+    background-color: var(--indaba-purple);
+    color: var(--light-text);
+    padding: 1rem;
+    text-align: center;
 }
 
 .schedule-item {
     display: flex;
-    margin-bottom: 1.5rem;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
 }
 
 .schedule-time {
-    background-color: var(--primary-color);
-    color: var(--light-text);
+    background-color: rgba(75, 64, 162, 0.1);
     padding: 1rem;
     min-width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    color: var(--accent-color);
+    border-right: 1px solid var(--border-color);
 }
 
 .schedule-details {
@@ -579,6 +761,31 @@ nav {
 
 .schedule-details h3 {
     margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.schedule-details p {
+    color: var(--text-color);
+}
+
+/* Page Header */
+.page-header {
+    color: var(--light-text);
+    padding: 5rem 0 3rem;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/matrix-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.page-header h1 {
+    margin-bottom: 0;
+    font-size: 3rem;
+}
+
+/* Call for Papers/Speakers Sections */
+.call-for-papers, .ai-festival {
+    color: var(--light-text);
 }
 
 .submission-info {
@@ -592,60 +799,32 @@ nav {
     background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
 }
 
-.call-for-papers {
-    background-color: var(--background-color);
-}
-
-/* Sponsors Page */
-.sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.sponsor-card {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.deadline-note {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
-.sponsor-logo {
-    height: 150px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.sponsor-logo img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.sponsors-grid.platinum .sponsor-card {
-    grid-column: span 2;
-}
-
-.become-sponsor {
-    background-color: var(--primary-color);
-    color: var(--light-text);
+/* Sponsors Section */
+.sponsors-section {
+    color: var(--light-text-1);
+    text-align: center;
 }
 
 .sponsor-cta {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-content {
@@ -662,114 +841,9 @@ nav {
     justify-content: center;
 }
 
-.cta-action .button {
-    background-color: var(--light-text);
-    color: var(--primary-color);
-}
-
-.cta-action .button:hover {
-    background-color: var(--accent-color);
+/* FAQ Section */
+.faq-section {
     color: var(--light-text);
-}
-
-.cta-action .button.secondary {
-    background-color: transparent;
-    border: 2px solid var(--light-text);
-    color: var(--light-text);
-}
-
-.cta-action .button.secondary:hover {
-    background-color: var(--light-text);
-    color: var(--primary-color);
-}
-
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.partner-card {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.partner-logo {
-    height: 120px;
-    margin-bottom: 1rem;
-}
-
-/* Registration Page */
-.registration-benefits {
-    margin-bottom: 2rem;
-}
-
-.registration-types {
-    margin-bottom: 2rem;
-}
-
-.registration-type {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-}
-
-.price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.registration-form {
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-family: var(--font-family);
-}
-
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.checkbox-group label {
-    display: flex;
-    align-items: center;
-    font-weight: normal;
-}
-
-.checkbox-group input[type="checkbox"] {
-    margin-right: 0.5rem;
 }
 
 .faq-grid {
@@ -783,19 +857,146 @@ textarea {
     background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+
+
+
+/* Slideshow Styles */
+/* Slideshow Styles */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 30px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* Thumbnail navigation */
+.thumbnail-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 10px;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+/* Compact dot navigation */
+.dots-container {
+    text-align: center;
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 5px 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    flex-shrink: 0;
+}
+
+
+.active-thumb {
+    opacity: 1 !important;
+    border: 2px solid var(--indaba-purple);
+}
+.slide-caption {
+    color: #bbb;
+}
+
+.achievements-grid {
+    color: #fffefe;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .slide img {
+        height: 300px;
+    }
+    .thumbnail-nav {
+        max-height: 60px;
+    }
+    .thumbnail {
+        width: 40px;
+        height: 30px;
+    }
+}
+
+/* Achievements Grid */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.achievement-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(75, 64, 162, 0.1);
+    border-radius: 8px;
+}
+
+.achievement-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--indaba-purple);
+    margin-bottom: 5px;
+}
+
+.achievement-label {
+    font-size: 1rem;
+    color: var(--text-color-1);
 }
 
 .faq-item h3 {
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: 0.75rem;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: rgba(17, 17, 17, 0.9);
     color: var(--light-text);
     padding: 3rem 0 0;
+    margin-top: 3rem;
 }
 
 .footer-content {
@@ -853,32 +1054,11 @@ footer {
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
-}
-
-.subscribe-form {
-    display: flex;
-    margin-top: 1rem;
-}
-
-.subscribe-form input {
-    flex: 1;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 4px 0 0 4px;
-}
-
-.subscribe-form button {
-    padding: 0.75rem 1rem;
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
+    background-color: var(--accent-color);
 }
 
 .footer-bottom {
-    background-color: #222;
+    background-color: #0a0a0a;
     padding: 1.5rem 0;
     text-align: center;
 }
@@ -909,28 +1089,14 @@ footer {
         font-size: 2rem;
     }
     
-    .timeline::before {
-        left: 30px;
-    }
-    
-    .timeline-date {
-        width: 60px;
-    }
-    
-    .timeline-content {
-        padding-left: 20px;
-    }
-    
-    .timeline-content::before {
-        left: 26px;
-    }
-    
     .schedule-item {
         flex-direction: column;
     }
     
     .schedule-time {
         min-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
     }
     
     .sponsor-cta {

@@ -15,10 +15,17 @@
         <div class="event-structure">
             <div class="structure-item">
                 <div class="structure-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>AI Expo & Festival</h3>
+                <p>Showcase of local AI innovations, research projects, demos, creative installations, and tech products addressing Botswana's unique challenges.</p>
+            </div>
+            <div class="structure-item">
+                <div class="structure-icon">
                     <i class="fas fa-laptop-code"></i>
                 </div>
-                <h3>AI/ML Hackathon</h3>
-                <p>Hands-on sessions for beginners and advanced Hackers, covering fundamental concepts to problem-solving.</p>
+                <h3>Hands-on Workshops</h3>
+                <p>Practical Python & R workshops covering fundamental concepts to advanced problem-solving for all skill levels.</p>
             </div>
             <div class="structure-item">
                 <div class="structure-icon">
@@ -34,13 +41,6 @@
                 <h3>Panel Discussions</h3>
                 <p>Engaging conversations on AI ethics, policy, industry applications, and the future of AI in Botswana.</p>
             </div>
-            <div class="structure-item">
-                <div class="structure-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>AI Expo</h3>
-                <p>Showcase of local AI innovations, startups, and applications addressing Botswana's unique challenges.</p>
-            </div>
         </div>
     </div>
 </section>
@@ -52,69 +52,225 @@
         
         <div class="schedule-tabs">
             <div class="tab-buttons">
-                {% for day in programme %}
-                <button class="tab-button {% if loop.first %}active{% endif %}" onclick="openTab(event, 'day{{ loop.index }}')">{{ day.day }}</button>
-                {% endfor %}
+                <button class="tab-button active" onclick="openTab(event, 'day1')">Day 1 - JULY 30</button>
+                <button class="tab-button" onclick="openTab(event, 'day2')">Day 2 - JULY 31</button>
+                <button class="tab-button" onclick="openTab(event, 'day3')">Day 3 - AUGUST 1</button>
             </div>
             
-            {% for day in programme %}
-            <div id="day{{ loop.index }}" class="tab-content {% if loop.first %}active{% endif %}">
+            <div id="day1" class="tab-content active">
                 <div class="day-schedule">
-                    {% for event in day.events %}
+                    <div class="daily-theme">
+                        <h3>Day 1 Theme: AI Expo & Posters</h3>
+                    </div>
                     <div class="schedule-item">
-                        <div class="schedule-time">{{ event.time }}</div>
+                        <div class="schedule-time">08:30 - 09:10</div>
                         <div class="schedule-details">
-                            <h3>{{ event.title }}</h3>
-                            <p>{{ event.description }}</p>
+                            <h3>Registration</h3>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:10 - 09:30</div>
+                        <div class="schedule-details">
+                            <h3>Welcome Remarks & Opening Ceremony</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:30 - 10:30</div>
+                        <div class="schedule-details">
+                            <h3>Community Empowerment through Technology</h3>
+                            <p>Cultivating a Research Culture in Botswana</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:30 - 11:00</div>
+                        <div class="schedule-details">
+                            <h3>Tea Break & Networking</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:00 - 13:00</div>
+                        <div class="schedule-details">
+                            <h3>AI Festival & Demos Exhibition</h3>
+                            <p>Showcase of research projects, AI demos, creative installations & tech products</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">13:00 - 14:00</div>
+                        <div class="schedule-details">
+                            <h3>Lunch Break & Group Photos</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">14:00 - 16:00</div>
+                        <div class="schedule-details">
+                            <h3>Poster Session</h3>
+                            <p>Poster presentations from researchers, students, and professionals</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">16:00 - 16:30</div>
+                        <div class="schedule-details">
+                            <h3>AI in African Industries and Beyond</h3>
+                            <p>Bridging the Gap: Inspiring Data Science Enthusiasts</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">16:30 - 17:00</div>
+                        <div class="schedule-details">
+                            <h3>Closing Remarks for Day 1</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="speakers-section">
-    <div class="container">
-        <h2>Featured Speakers</h2>
-        <div class="speakers-grid">
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Prof. Naledi Kgathi</h3>
-                <p class="speaker-title">AI Ethics Researcher, University of Cape Town</p>
-                <p>Keynote: "Responsible AI Development in African Contexts"</p>
+            
+            <div id="day2" class="tab-content">
+                <div class="day-schedule">
+                    <div class="daily-theme">
+                        <h3>Day 2 Theme: Python & R Workshops</h3>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">08:30 - 09:00</div>
+                        <div class="schedule-details">
+                            <h3>Registration</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:00 - 09:15</div>
+                        <div class="schedule-details">
+                            <h3>Welcome to Day 2</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:15 - 10:45</div>
+                        <div class="schedule-details">
+                            <h3>Morning Workshop Sessions (Parallel Tracks)</h3>
+                            <p>- Track 1: Introduction to Python for ML<br>
+                            - Track 2: Advanced Python for Data Science<br>
+                            - Track 3: Introduction to R for Statistical Analysis</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:45 - 11:15</div>
+                        <div class="schedule-details">
+                            <h3>Tea Break & Networking</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">11:15 - 13:00</div>
+                        <div class="schedule-details">
+                            <h3>Mid-day Workshop Sessions (Parallel Tracks)</h3>
+                            <p>- Track 1: Data Visualization with Python<br>
+                            - Track 2: Deep Learning Fundamentals<br>
+                            - Track 3: Data Analysis with R</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">13:00 - 14:00</div>
+                        <div class="schedule-details">
+                            <h3>Lunch Break & Networking</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">14:00 - 16:00</div>
+                        <div class="schedule-details">
+                            <h3>Afternoon Workshop Sessions (Parallel Tracks)</h3>
+                            <p>- Track 1: Machine Learning with Scikit-Learn<br>
+                            - Track 2: NLP Applications<br>
+                            - Track 3: R for Machine Learning</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">16:00 - 16:30</div>
+                        <div class="schedule-details">
+                            <h3>Workshop Showcase</h3>
+                            <p>Highlighting key learnings and participant projects</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">16:30 - 17:00</div>
+                        <div class="schedule-details">
+                            <h3>Closing Remarks for Day 2</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Dr. Tumelo Molefe</h3>
-                <p class="speaker-title">Lead Data Scientist, Botswana Innovation Hub</p>
-                <p>Talk: "Machine Learning Applications in Agriculture"</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Ms. Boitumelo Sebego</h3>
-                <p class="speaker-title">Tech Entrepreneur & AI Advocate</p>
-                <p>Panel: "Building AI Startups in Botswana"</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Dr. Kagiso Ndlovu</h3>
-                <p class="speaker-title">AI Researcher, Google DeepMind</p>
-                <p>Workshop: "Deep Reinforcement Learning"</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Prof. Lesego Moeng</h3>
-                <p class="speaker-title">Computer Science Department, UB</p>
-                <p>Talk: "AI Education in Botswana"</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Mr. Thato Kgosi</h3>
-                <p class="speaker-title">CTO, Botswana Digital Innovation Hub</p>
-                <p>Panel: "AI Policy and Governance"</p>
+            
+            <div id="day3" class="tab-content">
+                <div class="day-schedule">
+                    <div class="daily-theme">
+                        <h3>Day 3 Theme: Keynotes & Talks</h3>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">08:30 - 09:00</div>
+                        <div class="schedule-details">
+                            <h3>Registration</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:00 - 09:15</div>
+                        <div class="schedule-details">
+                            <h3>Welcome to Day 3</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">09:15 - 10:15</div>
+                        <div class="schedule-details">
+                            <h3>Keynote Address</h3>
+                            <p>From Knowledge to Impact: Harnessing AI for Botswana's Growth</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:15 - 10:45</div>
+                        <div class="schedule-details">
+                            <h3>Tea Break & Networking</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">10:45 - 12:15</div>
+                        <div class="schedule-details">
+                            <h3>Technical Talks Session</h3>
+                            <p>- AI for Social Good<br>
+                            - NLP & Local Language AI<br>
+                            - Computer Vision Applications</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">12:15 - 13:00</div>
+                        <div class="schedule-details">
+                            <h3>Panel Discussion</h3>
+                            <p>AI in Agriculture, Health, Finance, and Astronomy</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">13:00 - 14:00</div>
+                        <div class="schedule-details">
+                            <h3>Lunch Break & Networking</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">14:00 - 15:30</div>
+                        <div class="schedule-details">
+                            <h3>Technical Talks Session</h3>
+                            <p>- Machine Learning Research<br>
+                            - Responsible & Ethical AI<br>
+                            - AI for Business & Industry</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">15:30 - 16:15</div>
+                        <div class="schedule-details">
+                            <h3>Panel Discussion</h3>
+                            <p>Policy, Governance & Future Trends in AI</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">16:15 - 17:00</div>
+                        <div class="schedule-details">
+                            <h3>Closing Ceremony</h3>
+                            <p>Awards, acknowledgments, and closing remarks</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -122,31 +278,67 @@
 
 <section class="call-for-papers">
     <div class="container">
-        <h2>Call for Papers and Presentations</h2>
-        <p>We invite submissions for technical papers, posters, and workshop proposals related to AI and machine learning. Selected submissions will be featured in the conference programme.</p>
+        <h2>Call for Speakers</h2>
+        <p>We're inviting researchers, professionals, developers, students, and innovators to speak at IndabaX Botswana 2025. Selected submissions will be featured in the conference programme.</p>
         <div class="submission-info">
             <div class="submission-item">
-                <h3>Important Dates</h3>
+                <h3>We're Looking For</h3>
                 <ul>
-                    <li>Submission Deadline: March 15, 2025</li>
-                    <li>Notification of Acceptance: April 30, 2025</li>
-                    <li>Camera-Ready Submission: May 15, 2025</li>
+                    <li>Keynotes</li>
+                    <li>Technical talks</li>
+                    <li>Workshops & tutorials</li>
+                    <li>Panel discussions</li>
                 </ul>
             </div>
             <div class="submission-item">
-                <h3>Topics of Interest</h3>
+                <h3>Focus Areas</h3>
                 <ul>
-                    <li>Machine Learning Algorithms and Applications</li>
-                    <li>Natural Language Processing</li>
-                    <li>Computer Vision</li>
                     <li>AI for Social Good</li>
-                    <li>AI Ethics and Policy</li>
-                    <li>AI in Healthcare, Agriculture, Education</li>
+                    <li>NLP & local language AI</li>
+                    <li>Computer Vision</li>
+                    <li>AI in Agriculture, Health, Finance, Astronomy</li>
+                    <li>Machine Learning Research</li>
+                    <li>Responsible & Ethical AI</li>
+                    <li>AI for Business & Industry</li>
+                    <li>Policy, Governance & Trends</li>
                 </ul>
             </div>
         </div>
         <div class="center-button">
-            <a href="#" class="button">Submit Your Paper</a>
+            <a href="https://forms.gle/5RDXcsBs4RRaqazj7" class="button" target="_blank">Submit Your Proposal</a>
+            <p class="deadline-note">Submission Deadline: May 20, 2025</p>
+        </div>
+    </div>
+</section>
+
+<section class="ai-festival">
+    <div class="container">
+        <h2>Call for Participation - AI Festival</h2>
+        <p>We're calling on academics, students, startups, companies & organizations to showcase their AI work at the AI Festival!</p>
+        <div class="submission-info">
+            <div class="submission-item">
+                <h3>Share Your</h3>
+                <ul>
+                    <li>Research projects</li>
+                    <li>AI demos</li>
+                    <li>Creative installations</li>
+                    <li>Tech products or prototypes</li>
+                </ul>
+            </div>
+            <div class="submission-item">
+                <h3>Who Can Participate</h3>
+                <ul>
+                    <li>Academics</li>
+                    <li>Students</li>
+                    <li>Startups</li>
+                    <li>Companies</li>
+                    <li>Organizations</li>
+                </ul>
+            </div>
+        </div>
+        <div class="center-button">
+            <a href="https://lnkd.in/drPJs_JK" class="button" target="_blank">Apply for AI Festival</a>
+            <p class="deadline-note">Submission Deadline: June 30, 2025</p>
         </div>
     </div>
 </section>

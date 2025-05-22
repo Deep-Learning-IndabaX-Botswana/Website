@@ -8,7 +8,7 @@
         <p class="event-date">{{ event.date_string }} | {{ event.venue }}</p>
         <div class="cta-buttons">
             <a href="{{ url_for('register') }}" class="cta-button primary">Register Now</a>
-            <a href="#" class="cta-button secondary">Submit a Talk</a>
+            
         </div>
     </div>
 </section>
@@ -74,36 +74,67 @@
     </div>
 </section>
 
-<section class="featured-speakers">
+<section class="past-events-highlights">
     <div class="container">
-        <h2>Featured Speakers</h2>
-        <p class="section-intro">Meet some of our distinguished speakers who will be sharing their insights and expertise.</p>
-        <div class="speakers-grid">
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Prof. Bakang Kgopolo</h3>
-                <p class="speaker-title">AI Ethics Researcher, University of Cape Town</p>
-                <p>Keynote: "Responsible AI Development in African Contexts"</p>
+        <h2>Past Event Highlights : <i>"Both University"</i> </h2>
+        
+        <!-- Image Slideshow Container -->
+        <div class="slideshow-container">
+            <!-- Slides 1-29 -->
+            {% for i in range(1, 30) %}
+            <div class="slide fade">
+                <img src="/static/images/{{ i }}.jpg" alt="IndabaX 2024 Event Photo {{ i }}">
+                <div class="slide-caption">IndabaX Botswana 2024 - Moment {{ i }}</div>
             </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Dr. Bakang Kgopolo</h3>
-                <p class="speaker-title">Lead Data Scientist, Botswana Innovation Hub</p>
-                <p>Talk: "Machine Learning Applications in Agriculture"</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Ms. Bakang Kgopolo</h3>
-                <p class="speaker-title">Tech Entrepreneur & AI Advocate</p>
-                <p>Panel: "Building AI Startups in Botswana"</p>
-            </div>
-            <div class="speaker-card">
-                <div class="speaker-image placeholder"></div>
-                <h3>Ms. Bakang Kgopolo</h3>
-                <p class="speaker-title">Tech Entrepreneur & AI Advocate</p>
-                <p>Panel: "Building AI Startups in Botswana"</p>
+            {% endfor %}
+            
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            <!-- Thumbnail navigation (for many slides) -->
+            <div class="thumbnail-nav">
+                {% for i in range(1, 30) %}
+                <img class="thumbnail" src="/static/images/{{ i }}.jpg" onclick="currentSlide({{ i }})" alt="Thumb {{ i }}">
+                {% endfor %}
             </div>
         </div>
+        
+        <!-- Compact dot navigation -->
+        <div class="dots-container">
+            {% for i in range(1, 30) %}
+            <span class="dot" onclick="currentSlide({{ i }})"></span>
+            {% endfor %}
+        </div>
+        
+        <!-- Achievements Stats -->
+        <div class="achievements-grid">
+            <div class="achievement-item">
+                <div class="achievement-number">10+</div>
+                <div class="achievement-label">Speakers</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">43%</div>
+                <div class="achievement-label">Women</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">15+</div>
+                <div class="achievement-label">Organizers</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">250+</div>
+                <div class="achievement-label">Attendees</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">6</div>
+                <div class="achievement-label">Partners</div>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-number">6+</div>
+                <div class="achievement-label">Countries</div>
+            </div>
+        </div>
+        
         <div class="center-button">
             <a href="{{ url_for('programme_page') }}" class="button">View Full Programme</a>
         </div>

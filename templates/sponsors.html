@@ -15,49 +15,13 @@
         <p>IndabaX Botswana is made possible through the generous support of our sponsors and partners. Their commitment to advancing AI education and research in Botswana helps us create a meaningful and impactful event.</p>
     </div>
 </section>
-
 <section class="sponsors-section">
     <div class="container">
-        <h2>Platinum Sponsors</h2>
-        <div class="sponsors-grid platinum">
-            {% for sponsor in sponsors %}
-                {% if sponsor.level == "Platinum" %}
-                <div class="sponsor-card">
-                    <div class="sponsor-logo">
-                        <img src="{{ url_for('static', filename='images/sponsors/' + sponsor.logo) }}" alt="{{ sponsor.name }} logo">
-                    </div>
-                    <h3>{{ sponsor.name }}</h3>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        
-        <h2>Gold Sponsors</h2>
-        <div class="sponsors-grid gold">
-            {% for sponsor in sponsors %}
-                {% if sponsor.level == "Gold" %}
-                <div class="sponsor-card">
-                    <div class="sponsor-logo">
-                        <img src="{{ url_for('static', filename='images/sponsors/' + sponsor.logo) }}" alt="{{ sponsor.name }} logo">
-                    </div>
-                    <h3>{{ sponsor.name }}</h3>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        
-        <h2>Silver Sponsors</h2>
-        <div class="sponsors-grid silver">
-            {% for sponsor in sponsors %}
-                {% if sponsor.level == "Silver" %}
-                <div class="sponsor-card">
-                    <div class="sponsor-logo">
-                        <img src="{{ url_for('static', filename='images/sponsors/' + sponsor.logo) }}" alt="{{ sponsor.name }} logo">
-                    </div>
-                    <h3>{{ sponsor.name }}</h3>
-                </div>
-                {% endif %}
-            {% endfor %}
+        <h2>Our Partners Previous Years</h2>
+        <div class="sponsor-card">
+            <div class="sponsor-logos">
+                <img src="{{ url_for('static', filename='images/image.png') }}" alt="Our Previous Partners Logos">
+            </div>
         </div>
     </div>
 </section>
@@ -78,7 +42,12 @@
                 </ul>
             </div>
             <div class="cta-action">
-                <a href="#" class="button">Download Sponsorship Prospectus</a>
+                <div class="pdf-actions">
+                        <a href="/static/docs/sponsorship_prospectus_2025.pdf" class="button" download>
+                            <i class="fas fa-download"></i> Download Full Prospectus
+                        </a>
+                        <span class="file-size">(Approx. 2.5MB)</span>
+                    </div>
                 <a href="mailto:sponsors@indabaxbotswana.org" class="button secondary">Contact Sponsorship Team</a>
             </div>
         </div>
@@ -103,21 +72,7 @@
             </div>
         </div>
         
-        <h2>Community Partners</h2>
-        <div class="partners-grid">
-            <div class="partner-card">
-                <div class="partner-logo placeholder"></div>
-                <h3>Botswana AI Society</h3>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo placeholder"></div>
-                <h3>Women in Tech Botswana</h3>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo placeholder"></div>
-                <h3>Botswana Innovation Hub</h3>
-            </div>
-        </div>
+    
     </div>
 </section>
 {% endblock %}

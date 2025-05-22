@@ -14,7 +14,7 @@
         <nav>
             <div class="logo">
                 <a href="{{ url_for('home') }}">
-                    <img src="{{ url_for('static', filename='images/indabax_logo.png') }}" alt="IndabaX Botswana Logo">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="IndabaX Botswana Logo">
                 </a>
             </div>
             <div class="nav-links">
@@ -38,8 +38,8 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact Us</h3>
-                <p>Email: info@indabaxbotswana.org</p>
-                <p>Phone: +267 3555000</p>
+                <p>Email: {{ event.contact_email }}</p>
+                <p>Phone: {{ event.contact_phone }}</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -57,11 +57,13 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Subscribe to Updates</h3>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit">Subscribe</button>
-                </form>
+                <h3>Get Involved</h3>
+                <ul>
+                    <li><a href="{{ event.register_link }}" target="_blank">Apply as Attendee</a></li>
+                    <li><a href="{{ event.speakers_link }}" target="_blank">Apply as Speaker</a></li>
+                    <li><a href="{{ event.festival_link }}" target="_blank">Apply for AI Festival</a></li>
+                    <li><a href="mailto:{{ event.contact_email }}">Sponsorship Inquiries</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
