@@ -1,0 +1,57 @@
+the changes made to the original code to incorporate the complete organizer/committee structure:
+
+Added All Committees:
+
+Replaced the original 4 organizer cards with 8 comprehensive committee sections
+
+Added: Executive, Local Organization, Program, Accounting, Fundraising, Hackathon, Marketing, AI Fest, and Applications committees
+
+Committee Structure Changes:
+
+Each committee now clearly shows leads/co-leads at the top of their lists
+
+Maintained consistent formatting across all committees
+
+Added all member names exactly as provided in your list
+
+CSS Enhancements:
+
+Added scrollable cards (max-height: 400px with overflow-y: auto) for committees with many members
+
+Implemented sticky headers (position: sticky) so committee names remain visible while scrolling
+
+Added bullet points (using :before pseudo-element) for better list readability
+
+Improved mobile responsiveness with single-column layout below 768px
+
+Visual Improvements:
+
+Consistent purple color scheme using your --indaba-purple variable
+
+Better spacing between items with increased margin-bottom on list items
+
+Subtle box shadows and rounded corners for card styling
+
+Structural Changes:
+
+Reorganized the grid layout to handle more cards (3 columns on desktop)
+
+Made cards equal width with minmax(300px, 1fr) grid template
+
+Added proper padding and background colors for readability
+
+Mobile Optimization:
+
+Removed height restrictions on mobile (max-height: none)
+
+Simplified to single column layout on small screens
+
+Adjusted font sizes and spacing for mobile viewing
+
+Content Changes:
+
+Included all 50+ names across the various committees
+
+Clearly marked leads/co-leads in parentheses
+
+Grouped related committees (like Local Organization & Catering)
